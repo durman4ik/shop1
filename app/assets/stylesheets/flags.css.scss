@@ -1,0 +1,36 @@
+.flag-div {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  width: 100px;
+  height: 30px;
+
+  .flag-button {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .flag_ru {
+    background: url("Russia-icon.png");
+    background-size: 30px 30px;
+  }
+
+  .flag_by {
+    background: url("Belarus-icon.png");
+    background-size: 30px 30px;
+  }
+
+  .flag_en {
+    background: url("USA-icon.png");
+    background-size: 30px 30px;
+  }
+
+}

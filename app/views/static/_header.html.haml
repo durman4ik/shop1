@@ -1,0 +1,18 @@
+%header#header
+  .container
+    %nav.header-primary-nav
+      =link_to t('index.shop_button'), catalog_path, class: 'hoverline'
+      =link_to t('index.about_button'), about_path, class: 'hoverline'
+    =link_to '', root_path, class: 'nav-logo'
+    %nav.header-secondary-nav
+      -if current_user.nil?
+        =link_to t('index.login'), user_session_path, class: 'hoverline'
+        =link_to t('index.help_button'), help_path, class: 'hoverline'
+      -else
+        =link_to t('index.help_button'), help_path, class: 'hoverline'
+        .hoverline.dropdown
+          =link_to t('index.account'), '', remote:true, class: 'drop-label'
+          .dropdown-block
+            =link_to t('index.my_account'), account_path, class: 'drop'
+            =link_to t('index.logout'), destroy_user_session_path, method: :delete, class: 'drop'
+      =link_to '2', '', class: 'link-cart', remote: true

@@ -1,0 +1,17 @@
+<svg width="22px" height="27px" viewBox="0 0 22 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<title>Shopping_Bag</title>
+<description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+<defs/>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+<g id="Shopping_Bag" sketch:type="MSArtboardGroup" fill="#333333">
+<g id="Oval-76-+-Your-Bag-+-Rectangle-225-copy" sketch:type="MSLayerGroup">
+<g id="Oval-76-+-Your-Bag" transform="translate(0.000000, 7.000000)" sketch:type="MSShapeGroup">
+<g id="Your-Bag">
+<path d="M3.42822511,0 C2.5473907,0 1.76808403,0.711810589 1.68640304,1.60287589 L0.14693029,18.3971241 C0.0657829314,19.282368 0.707062334,20 1.59990697,20 L20.400093,20 C21.2836973,20 21.9347507,19.2881894 21.8530697,18.3971241 L20.313597,1.60287589 C20.2324496,0.717631979 19.4479783,0 18.5717749,0 L3.42822511,0 Z" id="Rectangle-425" fill="#fff"/>
+</g>
+</g>
+<path d="M6,2.99878564 L6,10.0012144 C6,11.6573979 7.3486445,13 9.00032973,13 L12.9996703,13 C14.6567066,13 16,11.6577357 16,10.0012144 L16,2.99878564 C16,1.34260206 14.6513555,0 12.9996703,0 L9.00032973,0 C7.34329338,0 6,1.34226429 6,2.99878564 Z M12.9996703,2 C13.5494151,2 14,2.44979891 14,2.99878564 L14,10.0012144 C14,10.5527842 13.5525191,11 12.9996703,11 L9.00032973,11 C8.45058493,11 8,10.5502011 8,10.0012144 L8,2.99878564 C8,2.44721584 8.44748093,2 9.00032973,2 L12.9996703,2 Z" id="Rectangle-225" sketch:type="MSShapeGroup" fill="#fff"/>
+</g>
+</g>
+</g>
+</svg>

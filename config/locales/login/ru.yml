@@ -1,0 +1,7 @@
+ru:
+  login:
+    welcome: "Привет!"
+    please_enter: "Пожалуйста, введите email и пароль"
+    email_adress: "Email адрес"
+    password: "Пароль"
+    button: "Продолжить"

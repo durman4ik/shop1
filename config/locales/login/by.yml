@@ -1,0 +1,7 @@
+by:
+    login:
+        welcome: "Прывітанне!"
+        please_enter: "Калі ласка, увядзіце email і пароль"
+        email_adress: "Email адрас" #TODO: проверить правильность перевода.
+        password: "Пароль"
+        button: "Працягнуць"

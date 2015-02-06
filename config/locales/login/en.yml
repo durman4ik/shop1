@@ -1,0 +1,7 @@
+en:
+  login:
+      welcome: "Hi there!"
+      please_enter: "Please enter your email and password"
+      email_adress: "EMAIL ADDRESS"
+      password: "PASSWORD"
+      button: "Continue"

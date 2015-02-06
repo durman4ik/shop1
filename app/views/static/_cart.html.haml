@@ -1,0 +1,29 @@
+%noindex
+  #cart-div{:data_state => 'hidden'}
+    .cart
+      %header
+        %h2.title-cart ВАША КОРЗИНА
+        %span.quantity
+          2
+      .cart-body
+        .cart-item-list
+      %footer
+        .calculating
+          %div
+            %dl.calculation
+              %dt Сумма
+              %dd $400.00
+            %dl.calculation
+              %dt Доставка
+              %dd Бесплатно
+            %dl.calculation.total
+              %dt Итого
+              %dd $500
+        %nav.cart-nav
+          .keep-shopping
+            %span.cart-action-text
+              Продолжить
+              %br
+              выбор
+          .checkout
+            %span.cart-action-text Оформление

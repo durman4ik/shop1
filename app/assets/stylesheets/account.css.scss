@@ -1,0 +1,29 @@
+.main {
+  padding-top: 70px;
+  width: 100%;
+  display: table;
+}
+.main-banner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background: url("account-header.jpg") no-repeat center 40%;
+  width: 100%;
+  height: 380px;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  .username {
+    font-size: 37px;
+    color: #333;
+    line-height: 46px;
+    letter-spacing: 2px;
+  }
+
+  .email {
+    font-size: 15px;
+    color: #333;
+    line-height: 22px;
+    letter-spacing: 4px;
+  }
+}

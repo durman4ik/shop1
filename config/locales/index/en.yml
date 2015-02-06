@@ -1,0 +1,13 @@
+en:
+  index:
+    title: "You are welcome in our perfume shop"
+    button: "Shop now"
+    description: "The best flavors, all year round"
+    shop_button: "Shop"
+    about_button: "About"
+    help_button: "Help"
+    login: "Login"
+    logout: "Logout"
+    register: "Register"
+    account: "Account"
+    my_account: "My account"

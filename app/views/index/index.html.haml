@@ -1,0 +1,11 @@
+.page
+  .animated.fadeIn
+    #home-copy.showCopy
+      %h1.title
+        = t('index.title')
+      %h2.description
+        = t('index.description')
+      =link_to t('index.button'), catalog_path, class: 'button-home'
+      %p.notice= notice
+      %p.alert= alert
+  =render partial: 'static/flags'

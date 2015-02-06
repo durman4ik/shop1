@@ -1,0 +1,14 @@
+ru:
+  index:
+    title: "Добро пожаловать в мир парфюмерии"
+    button: "Купить сейчас"
+    description: "Лучшие ароматы круглый год"
+    shop_button: "Магазин"
+    about_button: "О нас"
+    help_button: "Помощь"
+    login: "Войти"
+    logout: "Выйти"
+    register: "Зарегистрироваться"
+    account: "Аккаунт"
+    my_account: "Мой аккаунт"
+
