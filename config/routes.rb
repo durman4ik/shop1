@@ -21,9 +21,18 @@ Rails.application.routes.draw do
           via: [:get, :post]
 
     resources :products
-    resources :line_items
+    resources :line_items do
+      member do
+        post 'increase', as: :increase
+        post 'decrease', as: :decrease
+      end
+
+    end
     resources :carts
 
+
+    post 'api/v' => 'store#render_cart_ico', as: :render_cart_ico
+    get '404' => 'pages#not_found', as: :not_found
     get 'account' => 'users#account', as: :account
     get 'store' => 'store#index', as: :catalog
     get 'about' => 'pages#about', as: :about

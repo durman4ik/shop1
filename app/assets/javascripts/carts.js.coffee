@@ -1,16 +1,13 @@
-#$(document).on('ready',  ->
-#  if sessionStorage.getItem("is_cart_visible") == 'showed'
-#    showCart()
-#  else
-#    hideCart()
-#)
-
 $(document).on('click','.link-cart', ->
   showCart()
 )
 
 $(document).on('click', '.keep-shopping', ->
   hideCart()
+  $.ajax(
+    type: 'POST'
+    url: 'api/v'
+  )
 )
 
 $('.add-to-cart-img-button').click(->
@@ -18,21 +15,14 @@ $('.add-to-cart-img-button').click(->
 )
 
 showCart = () ->
-#  sessionStorage.setItem("is_cart_visible", "showed")
   $('#cart-div').attr('data_state', 'showed')
 
 hideCart = () ->
-#  sessionStorage.setItem("is_cart_visible", "hidden")
   $('#cart-div').attr('data_state', 'hidden')
 
 $(document).on('click', '.remove', ->
-
   current_item = $(this).parents('li.cart-item')
-  $.ajax(
-    type: 'POST'
-    url: 'line_items/' + current_item.attr('data-line-id')
-    data: { _method: "DELETE" },
-    success: ->
-      current_item.remove()
+  current_item.slideUp(300, ->
+    current_item.remove()
   )
 )

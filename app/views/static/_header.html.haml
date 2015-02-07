@@ -15,4 +15,4 @@
           .dropdown-block
             =link_to t('index.my_account'), account_path, class: 'drop'
             =link_to t('index.logout'), destroy_user_session_path, method: :delete, class: 'drop'
-      =link_to '2', '', class: 'link-cart', remote: true
+      =link_to @cart.line_items.sum(:quantity), '', class: 'link-cart', remote: true

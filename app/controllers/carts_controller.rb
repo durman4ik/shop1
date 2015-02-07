@@ -1,16 +1,8 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   respond_to :html
-
-  def index
-    @carts = Cart.all
-    respond_with(@carts)
-  end
-
-  def show
-    respond_with(@cart)
-  end
 
   def new
     @cart = Cart.new
@@ -18,7 +10,13 @@ class CartsController < ApplicationController
   end
 
   def edit
+
   end
+
+  def show
+
+  end
+
 
   def create
     @cart = Cart.new(cart_params)
@@ -32,11 +30,18 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.destroy
+    @cart.destroy if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
     respond_with(@cart)
   end
 
   private
+
+    def invalid_cart
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to not_found_path
+    end
+
     def set_cart
       @cart = Cart.find(params[:id])
     end

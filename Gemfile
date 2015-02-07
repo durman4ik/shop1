@@ -35,6 +35,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem 'jquery-ui-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

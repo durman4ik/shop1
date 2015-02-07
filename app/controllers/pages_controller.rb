@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def help
   end
+
+  def not_found
+  end
 end

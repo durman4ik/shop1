@@ -1,1 +1,10 @@
-$('.cart').replaceWith("<%= escape_javascript(render partial: 'static/cart') %>");
+$('.cart').html("<%= escape_javascript(render partial: 'static/cart') %>");
+
+var current = $('#current');
+
+if (current.attr('data-quantity') > 1) {
+    current.animate({'background-color':'rgba(255, 252, 0, 0.18)'}, 300)
+            .animate({'background-color':'#fff'}, 500);
+} else {
+    current.hide(0).show('blind', 300);
+}

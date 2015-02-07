@@ -3,32 +3,23 @@
     %h2.title-cart
       =t('cart.title')
     %span.quantity
-      = @cart.line_items.length
+      = @cart.line_items.sum(:quantity)
   .cart-body
-    .cart-item-list{data: {quantity: @cart.line_items.length}}
-      .empty-cart
-        -#= @cart.empty TODO: сделать нормальное отображение пустой корзины.
+    .cart-item-list
+      -if @cart.line_items.length == 0
+        .animated.fadeIn
+          .empty-cart
+            = @cart.empty
       %ul.line-item
-        -@cart.line_items.includes(:product).each do |line_item|
-          %li.cart-item{data: {:'line-id' => line_item.id}}
-            =image_tag(line_item.product.image_url, class: 'thumb-cart')
-            .item-info
-              .title
-                =link_to line_item.product.title, product_path(line_item.product)
-              .quantity
-                =number_field_tag :quantity, 1, :min => 1
-              .options
-                Опции
-              .price
-                = number_to_currency(line_item.product.price)
-            %span.remove
+        =render partial: 'static/line_item'
   %footer
     .calculating
       %div
         %dl.calculation
           %dt
             = t('cart.subtotal')
-          %dd $300
+          %dd
+            = @cart.subtotal_price
         %dl.calculation
           %dt
             = t('cart.shipping')
