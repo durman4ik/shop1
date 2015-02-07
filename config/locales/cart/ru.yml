@@ -1,0 +1,10 @@
+ru:
+  cart:
+    title: 'Ваша корзина'
+    subtotal: 'Сумма'
+    shipping: 'Доставка'
+    total: 'Итого'
+    keep_shoping_html: 'Продолжить <br />выбор'
+    checkout: 'Оформление'
+
+    empty: "Ваша корзина пуста"

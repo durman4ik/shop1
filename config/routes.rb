@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get '', to: redirect("/#{I18n.locale}")
 
   scope '(:locale)', :locale => /ru|by|en/ do
@@ -22,8 +21,11 @@ Rails.application.routes.draw do
           via: [:get, :post]
 
     resources :products
+    resources :line_items
+    resources :carts
+
     get 'account' => 'users#account', as: :account
-    get 'shop' => 'products#index', as: :catalog
+    get 'store' => 'store#index', as: :catalog
     get 'about' => 'pages#about', as: :about
     get 'help' => 'pages#help', as: :help
 

@@ -1,29 +1,46 @@
-%noindex
-  #cart-div{:data_state => 'hidden'}
-    .cart
-      %header
-        %h2.title-cart ВАША КОРЗИНА
-        %span.quantity
-          2
-      .cart-body
-        .cart-item-list
-      %footer
-        .calculating
-          %div
-            %dl.calculation
-              %dt Сумма
-              %dd $400.00
-            %dl.calculation
-              %dt Доставка
-              %dd Бесплатно
-            %dl.calculation.total
-              %dt Итого
-              %dd $500
-        %nav.cart-nav
-          .keep-shopping
-            %span.cart-action-text
-              Продолжить
-              %br
-              выбор
-          .checkout
-            %span.cart-action-text Оформление
+.cart
+  %header
+    %h2.title-cart
+      =t('cart.title')
+    %span.quantity
+      = @cart.line_items.length
+  .cart-body
+    .cart-item-list{data: {quantity: @cart.line_items.length}}
+      .empty-cart
+        -#= @cart.empty TODO: сделать нормальное отображение пустой корзины.
+      %ul.line-item
+        -@cart.line_items.includes(:product).each do |line_item|
+          %li.cart-item{data: {:'line-id' => line_item.id}}
+            =image_tag(line_item.product.image_url, class: 'thumb-cart')
+            .item-info
+              .title
+                =link_to line_item.product.title, product_path(line_item.product)
+              .quantity
+                =number_field_tag :quantity, 1, :min => 1
+              .options
+                Опции
+              .price
+                = number_to_currency(line_item.product.price)
+            %span.remove
+  %footer
+    .calculating
+      %div
+        %dl.calculation
+          %dt
+            = t('cart.subtotal')
+          %dd $300
+        %dl.calculation
+          %dt
+            = t('cart.shipping')
+          %dd Бесплатно
+        %dl.calculation.total
+          %dt
+            = t('cart.total')
+          %dd $500
+    %nav.cart-nav
+      .keep-shopping
+        %span.cart-action-text
+          =t('cart.keep_shoping_html')
+      .checkout
+        %span.cart-action-text
+          =t('cart.checkout')

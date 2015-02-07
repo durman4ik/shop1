@@ -7,6 +7,9 @@
   %body.body{:data_page => 'index'}
     =render partial: 'static/header'
     #render-page
-      =render partial: 'static/cart'
+      %noindex
+        #cart-div{:data_state => 'hidden'}
+          =render partial: 'static/cart'
       = yield
+      =render partial: 'static/flags'
     = javascript_include_tag 'application'

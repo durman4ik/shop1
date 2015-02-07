@@ -1,0 +1,9 @@
+by:
+  cart:
+    title: 'Ваш кошык'
+    subtotal: 'Сума'
+    shipping: 'Дастаўка'
+    total: 'Усяго'
+    keep_shoping_html: 'Працягнуць <br /> выбар'
+    checkout: 'Афармленне'
+    empty: "Ваш кошык пусты"

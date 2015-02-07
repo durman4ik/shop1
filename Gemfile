@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 
 gem 'pry'
 gem 'better_errors'
-gem 'haml'
+gem 'haml-rails'
 gem 'devise'
 
 gem 'omniauth'

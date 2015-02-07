@@ -1,0 +1,20 @@
+.store
+  - if notice
+    %p#notice= notice
+  .filter-block
+  .catalog-view
+    %ul.items-list
+      -cache ['items-list', Product.latest] do
+        - @products.each do |product|
+          - cache ['item', product] do
+            %li.item{data: {:'product-id' => product.id}}
+              =link_to product_path(product) do
+                = image_tag(product.image_url, class: 'product-image')
+                .details
+                  .title
+                    = product.title
+                  .price
+                    = number_to_currency(product.price)
+                  .button
+                    =button_to 'В корзину', line_items_path(product_id: product),
+                      class: 'add-to-cart-img-button', remote: true
