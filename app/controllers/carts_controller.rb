@@ -10,11 +10,9 @@ class CartsController < ApplicationController
   end
 
   def edit
-
   end
 
   def show
-
   end
 
 
@@ -30,6 +28,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    authorize! :delete, Cart
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_with(@cart)

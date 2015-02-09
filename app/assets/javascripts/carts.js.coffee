@@ -6,7 +6,7 @@ $(document).on('click', '.keep-shopping', ->
   hideCart()
   $.ajax(
     type: 'POST'
-    url: 'api/v'
+    url: $('.cart-action-text').attr('data-path')
   )
 )
 

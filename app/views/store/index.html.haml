@@ -14,7 +14,4 @@
                   .title
                     = product.title
                   .price
-                    = number_to_currency(product.price)
-                  .button
-                    =button_to 'В корзину', line_items_path(product_id: product),
-                      class: 'add-to-cart-img-button', remote: true
+                    = "от #{number_to_currency(product.product_properties.minimum(:property_price).to_i)}"

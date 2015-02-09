@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
 
   def index
-    @products = Product.order(:title)
+    @products = Product.includes(:product_properties).order(:title)
   end
 
   def render_cart_ico

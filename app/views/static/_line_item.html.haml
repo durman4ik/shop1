@@ -12,7 +12,7 @@
           =link_to '+', increase_line_item_path(line_item.id), method: :post, remote: true, class: 'increase-button'
         .options
         .price
-          = number_to_currency(line_item.product.price)
+          = number_to_currency(line_item.subtotal_price)
       =link_to '', line_item_path(line_item), method: :delete, remote: true, class: 'remove'
   -else
     %li.cart-item
@@ -27,5 +27,5 @@
           =link_to '+', increase_line_item_path(line_item.id), method: :post, remote: true, class: 'increase-button'
         .options
         .price
-          = number_to_currency(line_item.product.price)
+          = number_to_currency(line_item.subtotal_price)
       =link_to '', line_item_path(line_item), method: :delete, remote: true, class: 'remove'

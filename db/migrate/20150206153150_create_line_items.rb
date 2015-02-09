@@ -1,8 +1,10 @@
 class CreateLineItems < ActiveRecord::Migration
   def change
     create_table :line_items do |t|
-      t.references :product, index: true
-      t.belongs_to :cart, index: true
+      t.references  :product,           index: true
+      t.belongs_to  :cart,              index: true
+      t.integer     :quantity,          default: 1
+      t.decimal     :subtotal_price,    precision: 8, scale: 2
 
       t.timestamps
     end

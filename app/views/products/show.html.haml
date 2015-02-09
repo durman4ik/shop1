@@ -1,0 +1,54 @@
+.product-show
+  .product-image
+    .images-list
+      =image_tag(@product.image_url)
+  .product-filter
+    .filter-block
+      %section.product-essentials
+        %section.product-summary
+          %h1.product-title
+            = @product.title
+          .price-wrapper
+            %h2.product-price
+              -if @product.product_properties.length == 1
+                = number_to_currency(@product.product_properties.first.property_price)
+          %p.product-description
+            = truncate(@product.description, length: 300)
+          %a.reveal-details{:href => "#details"} Details
+        .product-pickers
+          %div
+            %div
+              .color-picker
+                .overlay
+                  -if @product.product_properties.length == 1
+                    %p
+                      = @product.product_properties.first.performance
+                  -else
+                    -@product.product_properties.each do |p|
+                      %div
+                        = link_to "#{p.performance}", '#', remote: true #TODO: сделать выбор между несколькими вариантами.
+              .size-picker
+                .overlay.lol
+                  %ul.option-types
+                    %li
+                      .option-type-label Объем
+                      %ul.option-values
+                        -if @product.product_properties.length == 1
+                          %p
+                            = "#{@product.product_properties.first.volume} мл"
+                        -else
+                          -@product.product_properties.each do |p|
+                            %li.option-value.selected
+                              =link_to "#{v.volume}", '#', remote: true, data: {} #TODO: сделать выбор между несколькими вариантами.
+        =button_to 'Add to Bag', line_items_path(product_id: @product.id), class: 'add-to-cart-img-button add-to-cart-btn', remote: true
+      %section.product-details
+        %a.hide-details{:href => "#"} Hide
+        .details-region
+          %div
+            %h1 Garment Details
+            %ul
+              %li 100% wool
+              %li Dry clean only
+              %li Made in Thailand
+              %li For Size Medium, body length is 42"
+              %li Oversized fit.  Consider sizing down.
