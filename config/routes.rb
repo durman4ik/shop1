@@ -21,6 +21,7 @@ Rails.application.routes.draw do
           via: [:get, :post]
 
     resources :products
+    resources :product_attachments
     resources :product_properties
     resources :line_items do
       member do

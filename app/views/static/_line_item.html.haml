@@ -1,7 +1,7 @@
 -@cart.line_items.includes(:product).each do |line_item|
   -if line_item == @current_item
     %li.cart-item#current{data: {quantity: line_item.quantity}}
-      =image_tag(line_item.product.image_url, class: 'thumb-cart')
+      =image_tag(line_item.product.product_attachments.first.image_url(:thumb), class: 'thumb-cart')
       .item-info
         .title
           =link_to line_item.product.title, product_path(line_item.product)
@@ -16,7 +16,7 @@
       =link_to '', line_item_path(line_item), method: :delete, remote: true, class: 'remove'
   -else
     %li.cart-item
-      =image_tag(line_item.product.image_url, class: 'thumb-cart')
+      =image_tag(line_item.product.product_attachments.first.image_url(:thumb), class: 'thumb-cart')
       .item-info
         .title
           =link_to line_item.product.title, product_path(line_item.product)

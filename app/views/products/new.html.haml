@@ -1,16 +1,2 @@
-.padding{style: 'padding-top: 70px'}
-  =form_for @product do |p|
-    =p.label :title
-    =p.text_field :title
-    =p.label :description
-    =p.text_field :description
-    =p.label :image_url
-    =p.text_field :image_url
-    =p.fields_for :product_properties do |v|
-      =v.label :performance
-      =v.text_field :performance
-      =v.label :volume
-      =v.text_field :volume
-      =v.label :property_price
-      =v.text_field :property_price
-    =p.submit 'Готово'
+.padding{style: 'padding-top: 70px; display: flex; flex-direction: column;'}
+  =render 'form'

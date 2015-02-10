@@ -9,7 +9,7 @@
           - cache ['item', product] do
             %li.item{data: {:'product-id' => product.id}}
               =link_to product_path(product) do
-                = image_tag(product.image_url, class: 'product-image')
+                = image_tag(product.product_attachments.first.image_url(:medium), class: 'product-image') unless product.product_attachments.blank?
                 .details
                   .title
                     = product.title

@@ -1,0 +1,24 @@
+=form_for @product do |p|
+  %div
+    =p.label :title
+    =p.text_field :title
+  %div
+    =p.label :description
+    =p.text_field :description
+  %div
+    =p.fields_for :product_attachments do |p|
+      %div
+        =p.label :image
+        =p.file_field :image, multiple: true, name: 'product_attachments[image][]'
+  %div
+    =p.fields_for :product_properties do |v|
+      %div
+        =v.label :performance
+        =v.text_field :performance, name: 'product_properties[property][performance][]'
+      %div
+        =v.label :volume
+        =v.text_field :volume, name: 'product_properties[property][volume][]'
+      %div
+        =v.label :property_price
+        =v.text_field :property_price, name: 'product_properties[property][property_price][]'
+  =p.submit 'Готово'

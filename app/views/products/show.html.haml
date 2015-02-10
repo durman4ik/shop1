@@ -1,7 +1,18 @@
 .product-show
   .product-image
     .images-list
-      =image_tag(@product.image_url)
+      .carousel.carousel-fade#carousel_fade{data: {interval: 'false'}}
+        .carousel-inner
+          -@product_images.each_with_index do |image, index|
+            .item{class: "#{'active' if index == 0}"}
+              =image_tag(image.image_url)
+        .carousel-nav
+          =link_to '', '#carousel_fade', class: 'left carousel-control prev',  :'data-slide' => 'prev'
+          %ol.carousel-indicators
+            -@product_images.each_with_index do |image, index|
+              %li{class: "#{'active' if index == 0}"}
+                %a
+          =link_to '', '#carousel_fade', class: 'right carousel-control next', :'data-slide' => 'next'
   .product-filter
     .filter-block
       %section.product-essentials
@@ -14,7 +25,7 @@
                 = number_to_currency(@product.product_properties.first.property_price)
           %p.product-description
             = truncate(@product.description, length: 300)
-          %a.reveal-details{:href => "#details"} Details
+          =link_to t('product.details'), '#', class: 'reveal-details', remote: true
         .product-pickers
           %div
             %div
@@ -31,18 +42,19 @@
                 .overlay.lol
                   %ul.option-types
                     %li
-                      .option-type-label Объем
+                      .option-type-label
+                        =t('product.volume')
                       %ul.option-values
                         -if @product.product_properties.length == 1
                           %p
-                            = "#{@product.product_properties.first.volume} мл"
+                            = @product.product_properties.first.volume + ' ' + t('product.ml')
                         -else
                           -@product.product_properties.each do |p|
                             %li.option-value.selected
                               =link_to "#{v.volume}", '#', remote: true, data: {} #TODO: сделать выбор между несколькими вариантами.
         =button_to 'Add to Bag', line_items_path(product_id: @product.id), class: 'add-to-cart-img-button add-to-cart-btn', remote: true
       %section.product-details
-        %a.hide-details{:href => "#"} Hide
+        =link_to 'Hide', '#', remote: true, class: 'hide-details'
         .details-region
           %div
             %h1 Garment Details

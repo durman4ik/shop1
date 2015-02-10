@@ -38,6 +38,8 @@ gem 'omniauth-vkontakte'
 gem 'jquery-ui-rails'
 gem 'cancancan'
 gem 'carrierwave'
+gem 'mini_magick'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

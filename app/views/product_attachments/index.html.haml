@@ -1,0 +1,23 @@
+%h1 Listing product_attachments
+
+%table
+  %thead
+    %tr
+      %th Product
+      %th Image
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @product_attachments.each do |product_attachment|
+      %tr
+        %td= product_attachment.product_id
+        %td= product_attachment.image
+        %td= link_to 'Show', product_attachment
+        %td= link_to 'Edit', edit_product_attachment_path(product_attachment)
+        %td= link_to 'Destroy', product_attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product attachment', new_product_attachment_path

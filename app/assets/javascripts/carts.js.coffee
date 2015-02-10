@@ -1,8 +1,6 @@
 $(document).on('click','.link-cart', ->
   showCart()
-)
-
-$(document).on('click', '.keep-shopping', ->
+).on('click', '.keep-shopping', ->
   hideCart()
   $.ajax(
     type: 'POST'

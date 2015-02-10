@@ -1,5 +1,5 @@
-$('.dropdown').mouseover( ->
+$(document).on('mouseover', '.dropdown', ->
   $(".dropdown-block").slideDown(150);
-).mouseleave(->
+).on('mouseleave', '.dropdown', ->
   $(".dropdown-block").slideUp(150);
 )

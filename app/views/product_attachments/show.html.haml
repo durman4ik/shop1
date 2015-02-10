@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Product:
+  = @product_attachment.product_id
+%p
+  %b Image:
+  = @product_attachment.image
+
+= link_to 'Edit', edit_product_attachment_path(@product_attachment)
+\|
+= link_to 'Back', product_attachments_path
