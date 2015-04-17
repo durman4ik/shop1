@@ -4,12 +4,13 @@
     %title Shop1
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
-  %body.body{:data_page => 'index'}
-    =render partial: 'static/header'
+  %body.body{class: controller.controller_name, :data_page => 'index'}
+    =render partial: 'static/header' unless params[:controller] == 'orders'
     #render-page
-      %noindex
-        #cart-div{:data_state => 'hidden'}
-          =render partial: 'static/cart'
+      - unless params[:controller] == 'orders'
+        %noindex
+          #cart-div{:data_state => 'hidden'}
+            =render partial: 'static/cart'
       = yield
       =render partial: 'static/flags'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'application', 'rails'

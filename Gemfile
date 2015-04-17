@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
@@ -39,6 +39,7 @@ gem 'jquery-ui-rails'
 gem 'cancancan'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'client_side_validations', github: 'bcardarella/client_side_validations', :branch => '4-2-stable'
 
 
 # Use unicorn as the app server

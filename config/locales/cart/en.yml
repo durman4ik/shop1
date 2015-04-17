@@ -7,3 +7,4 @@ en:
     keep_shoping_html: 'Continue <br /> shopping'
     checkout: 'Checkout'
     empty: "Your cart is empty"
+    item: 'Item'

@@ -6,5 +6,5 @@ ru:
     total: 'Итого'
     keep_shoping_html: 'Продолжить <br />выбор'
     checkout: 'Оформление'
-
     empty: "Ваша корзина пуста"
+    item: 'Флакона'

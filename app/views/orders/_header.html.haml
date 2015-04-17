@@ -1,0 +1,18 @@
+.header-checkout
+  .message-checkout
+    %h4
+      %strong
+        = t('orders.checkout')
+      %span.step-progress
+        = t('orders.step')
+        %span.step
+        = t('orders.of')
+        2
+  =link_to root_path do
+    = image_tag('image-logo-black.svg')
+  .help-message
+    %strong
+      = t('orders.need_hand')
+    = t('orders.talk_to_real')
+    %br/
+    %a{:href => "tel:+375-44-587-01-55"} +375-44-587-01-55

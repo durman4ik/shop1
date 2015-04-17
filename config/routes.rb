@@ -20,6 +20,7 @@ Rails.application.routes.draw do
           as: :omniauth_callback,
           via: [:get, :post]
 
+    resources :orders
     resources :products
     resources :product_attachments
     resources :product_properties

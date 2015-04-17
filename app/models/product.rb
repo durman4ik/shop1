@@ -1,8 +1,9 @@
 class Product < ActiveRecord::Base
 
+  has_many :orders, through: :line_items
+  has_many :line_items
   has_many :product_properties
   has_many :product_attachments
-  has_many :line_items
 
   accepts_nested_attributes_for :product_properties
   accepts_nested_attributes_for :product_attachments

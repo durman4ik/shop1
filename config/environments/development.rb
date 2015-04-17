@@ -16,6 +16,18 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.asset_host = "http://localhost:3000"
+  config.action_mailer.default_url_options = {:host=>"localhost", :port=>3000, :protocol=>"http://"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :user_name => 'Durman4ik',
+      :password => 'Dumanik13',
+      :domain => 'test@domain.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

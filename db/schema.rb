@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209142716) do
+ActiveRecord::Schema.define(version: 20150210174818) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -35,10 +35,26 @@ ActiveRecord::Schema.define(version: 20150209142716) do
     t.decimal  "subtotal_price", precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "address"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "pay_type"
+    t.string   "delivery_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "product_attachments", force: true do |t|
     t.integer  "product_id"

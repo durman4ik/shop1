@@ -1,1 +1,31 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            first_name:
+              blank: 'Не может быть пустым'
+              too_short: 'Слишком короткое'
+            last_name:
+              blank: 'Не может быть пустым'
+            address:
+              blank: 'Не может быть пустым'
+            city:
+              blank: 'Не может быть пустым'
+            zip_code:
+              too_short: 'индекс состоит из 6 цифр'
+              too_long: 'индекс состоит из 6 цифр'
+              not_a_number: 'только числовой формат'
+              blank: 'Не может быть пустым'
+            email:
+              blank: 'Не может быть пустым'
+            phone:
+              blank: 'Не может быть пустым'
+              not_a_number: 'номер состоит из цифр'
+              too_short: 'номер слишком короткий'
+              too_long: 'номер слишком длинный'
+            pay_type:
+              inclusion: 'Сделайте выбор'
+            delivery_type:
+              inclusion: 'Сделайте выбор'

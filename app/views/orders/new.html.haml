@@ -1,0 +1,25 @@
+= render partial: 'orders/header'
+
+.shipping{data: {step: 'checkout'}}
+  = form_for @order, validate: true do |f|
+    .checkout-step
+      %div.foo.active
+        %p.step-number I
+        %h2.step-title
+          = t('orders.shipping')
+        .address
+          %div
+            .address-form
+              = render 'form', :f => f
+    .review
+      %div.foo
+        .click-guard
+        %p.step-number II
+        %h2.step-title
+          = t('orders.review')
+        =render 'orders/order'
+        .field.buttons
+          =link_to 'Редактировать данные', '#', class: 'btn-submit back', remote: true
+          = f.submit 'Save', class: 'btn-submit apply'
+
+

@@ -1,0 +1,32 @@
+.group.full-name
+  .field.first-name
+    = f.label t('orders.first_name')
+    = f.text_field :first_name
+  .field.last-name
+    = f.label t('orders.last_name')
+    = f.text_field :last_name
+.field
+  = f.label t('orders.address')
+  = f.text_field :address, rows: 3, cols: 40
+.group
+  .field.city
+    = f.label t('orders.city')
+    = f.text_field :city
+  .field.zip
+    = f.label t('orders.zip_code')
+    = f.text_field :zip_code
+.field
+  = f.label t('orders.email')
+  = f.email_field :email
+.field
+  = f.label t('orders.phone')
+  = f.phone_field :phone
+.group
+  .field.pay-type
+    = f.label t('orders.pay_type')
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: '', validate: false
+  .field.delivery-type
+    = f.label t('orders.delivery_type')
+    = f.select :delivery_type, Order::DELIVERY_TYPES, prompt: '', validate: false
+.actions
+  =link_to t('orders.next'), '#', remote: true, class: 'btn-submit next-step'

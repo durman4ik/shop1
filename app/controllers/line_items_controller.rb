@@ -4,7 +4,7 @@ class LineItemsController < ApplicationController
 
   before_action :set_line_item, only: [:show, :edit, :update, :destroy, :increase, :decrease]
 
-  respond_to :js
+  respond_to :js, :html
 
   def index
     @line_items = LineItem.all
@@ -25,12 +25,12 @@ class LineItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)
-
+    @line_item.copy_price
     respond_to do |format|
       if @line_item.save
         format.js { render 'line_items/cart', collection: @current_item = @line_item }
       else
-        format.js { render nothing: true }
+        format.all { render nothing: true }
       end
     end
 
@@ -42,10 +42,18 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    sleep(0.3.seconds)
     respond_to do |format|
       if @line_item.destroy
-        format.js { render 'line_items/cart' }
+        if params[:render_action] == 'order'
+          if @cart.line_items.empty?
+            format.js { render js: %(window.location.href='#{root_path}') }
+          else
+            format.js { render 'orders/items'}
+          end
+        else
+          sleep(0.3.seconds)
+          format.js { render 'line_items/cart' }
+        end
       else
         format.js { render nothing: true  }
       end

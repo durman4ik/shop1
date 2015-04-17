@@ -8,6 +8,10 @@ $(document).on('click','.link-cart', ->
   )
 )
 
+$(document).on('click', '.checkout-link', ->
+  sessionStorage.setItem('data-step', 'checkout')
+)
+
 $('.add-to-cart-img-button').click(->
   showCart()
 )
@@ -19,8 +23,9 @@ hideCart = () ->
   $('#cart-div').attr('data_state', 'hidden')
 
 $(document).on('click', '.remove', ->
-  current_item = $(this).parents('li.cart-item')
+  current_item = $(this).parents('li.cart-item, .line-item')
   current_item.slideUp(300, ->
     current_item.remove()
   )
 )
+

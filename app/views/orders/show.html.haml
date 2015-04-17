@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b First name,:
+  = @order.first_name,
+%p
+  %b Last name,:
+  = @order.last_name,
+%p
+  %b Address:
+  = @order.address
+%p
+  %b City,:
+  = @order.city,
+%p
+  %b Zip code,:
+  = @order.zip_code,
+%p
+  %b Phone,:
+  = @order.phone,
+%p
+  %b Email,:
+  = @order.email,
+%p
+  %b Pay type,:
+  = @order.pay_type,
+%p
+  %b Delivery type:
+  = @order.delivery_type
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path

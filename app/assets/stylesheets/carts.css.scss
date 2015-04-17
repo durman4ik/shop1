@@ -285,6 +285,15 @@
         -o-transition: background-color 250ms ease-out;
         -ms-transition: background-color 250ms ease-out;
         transition: background-color 250ms ease-out;
+
+        a {
+          color: #fff;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          width: 100%;
+        }
       }
 
       .keep-shopping {

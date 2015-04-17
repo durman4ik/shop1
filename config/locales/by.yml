@@ -1,1 +1,31 @@
 by:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            first_name:
+              blank: 'Не можа быць пустым'
+              too_short: 'Занадта кароткі'
+            last_name:
+              blank: 'Не можа быць пустым'
+            address:
+              blank: 'Не можа быць пустым'
+            city:
+              blank: 'Не можа быць пустым'
+            zip_code:
+              too_short: 'індэкс складаецца з 6 цифр'
+              too_long: 'індэкс складаецца з 6 циф'
+              not_a_number: 'Толькі лікавы фармат'
+              blank: 'Не можа быць пустым'
+            email:
+              blank: 'Не можа быць пустым'
+            phone:
+              blank: 'Не можа быць пустым'
+              not_a_number: 'Толькі лікавы фармат'
+              too_short: 'Занадта кароткі'
+              too_long: 'Занадта доўгі'
+            pay_type:
+              inclusion: 'Сделайте выбор'
+            delivery_type:
+              inclusion: 'Сделайте выбор'

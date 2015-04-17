@@ -33,5 +33,4 @@
         %span.cart-action-text{data: {path: render_cart_ico_path}}
           =t('cart.keep_shoping_html')
       .checkout
-        %span.cart-action-text
-          =t('cart.checkout')
+        =link_to t('cart.checkout'), new_order_path, method: :get, class: 'cart-action-text checkout-link'

@@ -1,0 +1,6 @@
+Уважаемый(ая) #{@order.first_name + ' ' + @order.last_name}
+Администрация магазина Parfumers.by благодарит Вас за заказ.
+
+Вы заказали следующий товар:
+-@order.line_items.each do |line_item|
+  = sprintf("%2d x %s", line_item.quantity, truncate(line_item.product.title, length: 50))

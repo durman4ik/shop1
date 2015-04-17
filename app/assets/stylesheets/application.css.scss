@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.message {
+  color: red !important;
+}
+
+.with_errors input {
+  border: 1px solid rgba(255, 0, 0, 0.21) !important;
+}
